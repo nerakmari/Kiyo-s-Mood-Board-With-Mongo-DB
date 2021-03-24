@@ -1,0 +1,59 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Raleway&display=swap'); */
+
+body {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 30pt;
+}
+
+/* Navigation */
+
+nav{
+  margin-bottom: 30px;
+}
+nav ul{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+ 
+  margin: 0;
+  padding: .3rem;
+  background-color: seagreen;
+
+  list-style-type: none; 
+}
+
+li a {
+  text-decoration: none;
+  background-color: seagreen;
+  color: white;
+  
+  margin: auto;
+  padding: 1rem;
+
+  display: inline-flex;
+  justify-content: space-evenly;
+
+  cursor: pointer;
+}
+
+a:hover {
+  background-color: white;
+  color:seagreen;
+}
+
+/* Just Navigation and Image Media Query*/
+@media screen and (max-width: 600px) {
+  nav ul {
+    flex-direction: column-reverse;
+  }
+
+  img {
+    max-width: 200px;
+  }
+}
+
