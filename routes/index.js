@@ -8,12 +8,15 @@ const Image = require('../models/image')
     res.render('pages/index', {pageTitle: 'Index', dayJS})
   })
   
-  // GET single page
-  router.get('/images/:id', async(req,res)=>{
-    const image = await Image.findOne({id: req.params.id});
-    console.log(image.title);
-    res.render('pages/single-page', {pageTitle: image.title, image})
-  })
+  // GET single image
+  router.get('/images/:id', async(req ,res ,next )=>{
+    try{
+      const image = await Image.findOne({id: req.params.id});
+      res.render('pages/single-image', {pageTitle: image.title, image, dayJS});      
+    }catch(err){
+      return next(err);
+    }
+  });
 
   router.get('/login', (req, res) => {
     res.render('pages/login', {pageTitle: 'Login', dayJS})

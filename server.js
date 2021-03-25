@@ -26,9 +26,16 @@ app.use('/', (req,res,next)=>{
 app.use('/', index)
 
 // 404
-app.use((req, res) => {
-  res.status(404);
-  res.send('404 Error Page Not Found')
+app.use((req, res, next) => {
+  const err = new Error('page can\'t be found');
+  err.status= 404;
+  next(err);
+
+app.use((err,req,res,next) =>{
+  console.error(err);
+  const status = err.status || 500;
+  res.status(status);
+  res.render('pages/error', { pageTitle:`Error ${status}`, message: err.message, status });
 })
 
 //Listening on which port
