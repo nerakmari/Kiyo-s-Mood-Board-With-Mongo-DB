@@ -30,7 +30,9 @@ app.use((req, res, next) => {
   const err = new Error('page can\'t be found');
   err.status= 404;
   next(err);
+})
 
+// Error 
 app.use((err,req,res,next) =>{
   console.error(err);
   const status = err.status || 500;
@@ -41,6 +43,4 @@ app.use((err,req,res,next) =>{
 //Listening on which port
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, function(){
-  console.log (`Listening on port: ${PORT}`);
-})
+app.listen(PORT,() => console.log (`Listening on port: ${PORT}`))

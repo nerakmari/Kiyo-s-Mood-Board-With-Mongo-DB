@@ -16,7 +16,7 @@ const Image = require('../models/image')
     }catch(err){
       return next(err);
     }
-  });
+  })
 
   router.get('/login', (req, res) => {
     res.render('pages/login', {pageTitle: 'Login', dayJS})
