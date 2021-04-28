@@ -1,4 +1,4 @@
-# CPNT262-5- JSON Routes with Heroku and MongoDB Atlas 
+ JSON Routes with Heroku and MongoDB Atlas 
 
 ## Repository Owner and Maintainer: Karen Sule 
 
